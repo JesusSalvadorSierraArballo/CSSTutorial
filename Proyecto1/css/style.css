@@ -1,43 +1,48 @@
 /*https://necolas.github.io/normalize.css/*/
 /*Configuracíon inicial*/
-.navegacion {
+html {
     box-sizing: border-box;
+    font-size: 62.5%; /* 1REM = 10px*/
 }
-*,*::before, *::after {
+
+*, *:before, *:after {
     box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/*Globales*/
+/*Estilos para todo el proyecto*/
+
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 5rem 0;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
 }
 
 a {
     text-decoration: none;
     color: #000;
 }
-/**/
-
-.nombre-sitio {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.nombre-sitio span {
-    color: aqua;
-}
-.contenedor-navegacion {
-    border-color: #e1e1e1;
-    border-top-style: solid;
-    border-width: 1px;
-    /*lo mismo es 
-    border-top: 1px solid  #e1e1e1;
-    */
-}
-.nav-principal {
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-}
 
 .contenedor {
-    max-width: 1200px;
+    max-width: 120rem;
     margin-top: 0;
     margin-right: auto;
     margin-bottom: 0;
@@ -46,16 +51,62 @@ a {
 
 img {
     max-width: 100%;
+    display: block;
+}
+/**/
+.nombre-sitio {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.nombre-sitio span {
+    color: #037bc0;
+}
+.contenedor-navegacion {
+    border-color: #e1e1e1;
+    border-top-style: solid;
+    border-width: .1rem;
+    /*lo mismo es 
+    border-top: 1px solid  #e1e1e1;
+    */
+}
+.nav-principal {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .hero {
     background-image: url(../img/principal.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 550px;
+    background-position: center center;
+    height: 55rem;
 }
 
 .listado-categorias{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.categorias {
+    padding: 5rem;
+}
+
+.categorias h2{
+    text-align: center;
+}
+
+.categoria a {
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.categoria a:hover {
+    background-color: #037bc0;
+    color: #fff;
+    border-bottom-right-radius: 1rem;
 }
