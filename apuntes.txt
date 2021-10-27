@@ -1,1 +1,2 @@
 script css para normalizar los estilos globales css de cada navegador: https://necolas.github.io/normalize.css/
+Calculadora de conversión de rems a pixeles: https://www.dopethemes.com/tools/rem-calculator-css/
