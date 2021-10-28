@@ -53,6 +53,22 @@ img {
     max-width: 100%;
     display: block;
 }
+
+.btn {
+    color: #fff;
+    background-color: #8cbc00;
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    transition: background-color .3s ease-in-out;
+}
+
+.btn:hover {
+    background-color:#769c02;
+}
+
 /**/
 .nombre-sitio {
     margin-top: 5rem;
@@ -138,6 +154,40 @@ img {
     padding-top: 5rem;
 }
 
+.listado-productos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+    /*gap es el agrupador de ambos*/
+}
+
+.producto:nth-child(1) {
+    grid-column: 1/7; /*inicia en la linea uno y termina en la dos*/
+}
+
+.producto:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.producto:nth-child(3) {
+    grid-column-start: 4;
+    grid-column-end: 7;
+}
+.producto:nth-child(4) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.producto:nth-child(5) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+.producto:nth-child(6) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+}
+
 .producto {
  background-color: #037bc0;
 }
@@ -145,6 +195,7 @@ img {
 .texto-producto {
     text-align: center;
     color: #fff;
+    padding: 2rem;
 }
 
 
@@ -157,11 +208,4 @@ img {
 .texto-producto .precio {
     font-size: 2.8rem;
     font-weight: 900;
-}
-
-.texto-producto a {
-    color: #fff;
-    padding: 5rem;
-    background-color: green;
-    text-align: center;
 }
