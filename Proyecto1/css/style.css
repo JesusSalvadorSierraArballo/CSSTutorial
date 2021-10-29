@@ -162,10 +162,16 @@ img {
     /*gap es el agrupador de ambos*/
 }
 
-.producto:nth-child(1) {
-    grid-column: 1/7; /*inicia en la linea uno y termina en la dos*/
-}
 
+
+.producto:nth-child(1)  {
+    grid-column: 1/7; /*inicia en la linea uno y termina en la dos*/
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.producto:nth-child(1) img{
+    height: 43rem;
+}
 .producto:nth-child(2) {
     grid-column-start: 1;
     grid-column-end: 4;
