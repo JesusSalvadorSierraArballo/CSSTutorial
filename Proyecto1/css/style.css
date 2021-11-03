@@ -169,12 +169,21 @@ img {
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
-.producto:nth-child(1) img{
+.producto:nth-child(1) img {
     height: 43rem;
+    width: 100%;
+    object-fit: cover;
 }
 .producto:nth-child(2) {
     grid-column-start: 1;
     grid-column-end: 4;
+}
+
+.producto:nth-child(2) img,
+.producto:nth-child(3) img {
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
 }
 
 .producto:nth-child(3) {
@@ -214,4 +223,46 @@ img {
 .texto-producto .precio {
     font-size: 2.8rem;
     font-weight: 900;
+}
+
+/*Footer*/
+.site-footer {
+    margin-top: 5rem;
+    padding: 10rem 0;
+    border-top: 1px solid #e1e1e1;
+}
+.grid-footer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.site-footer h3 {
+    margin-bottom: .5rem;
+}
+
+.grid-footer a {
+    display: block;
+}
+
+.site-footer .copyright {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+/**Nosotros*/
+.contenido-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    column-gap: 4rem;
+}
+
+.contenido-nosotros .informacion-nosotros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contenido-nosotros .informacion-nosotros p {
+
 }
