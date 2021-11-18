@@ -67,5 +67,163 @@ h1, h2 {
 }
 
 .grid-2 .box:nth-child(2) {
-    /*grid-column-start: ;*/
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.grid-2 .box:nth-child(3) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    /*grid-column: 2 4; /* Version corta de las dos propiedades anteriores  */
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-rows: repeat(2, 300px);
+    grid-template-columns: repeat(3, 300px);
+}
+
+.grid-3 .box:nth-child(2) {
+    /*grid-row-start: 1;
+    grid-row-end: 2;*/
+    grid-row: 1 / 2;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-rows: repeat(3, 300px);
+    grid-template-columns: repeat(3, 300px);
+}
+.grid-4 .box:nth-child(2) {
+    grid-row: 3 / 4;
+}
+
+.grid-4 .box:nth-child(3) {
+    grid-column: 2 / span 2; 
+    /*Posicionate en la columna dos y expandete (span) dos columnas
+      En este caso no le decimos en cual se detenga, indicamos su crecimiento*/
+    grid-row: 2/ span 2;
+    background-color: blue;
+}
+
+.grid-5 {
+    display: grid;
+    /*grid-template-rows: repeat(3, 300px);
+    grid-template-columns: repeat(3, 300px);*/
+    grid: repeat(2, 300px) / repeat(3, 300px); /*Filas / Columnas version corta de las dos de arriba*/
+}
+
+.grid-6{
+    display: grid;
+    grid: repeat(2, 300px) / repeat(3, 300px); /*Filas / Columnas version corta de las dos de arriba*/
+    grid-auto-flow: column;
+}
+
+/*.grid-6 .box:nth-child(2) {
+    grid-column: 1 / 2;
+}*/
+
+.grid-7 {
+    display: grid;
+    grid: 2fr repeat(2, 1fr) / repeat(3, 1fr); /*Filas / Columnas version corta de las dos de arriba*/
+    grid-auto-flow: column;
+}
+
+.grid-8 {
+    display: grid;
+    grid: repeat(2, 1fr) / repeat(3, 1fr); /*Filas / Columnas version corta de las dos de arriba*/
+    /*row-gap: 1rem;
+    column-gap: 4rem;*/
+    gap: 10px 40px;
+}
+
+.grid-8 .box{
+    margin: 0;
+}
+
+
+.grid-9 {
+    display: grid;
+    height: 120rem;
+    grid-template-areas: "header header header"
+                         "nav nav nav"
+                         "contenido contenido sidebar"
+                         "footer footer footer";
+    grid-template-columns: repeat(3, 1fr);
+    /*grid-template-rows: 25rem 10rem 60rem 25rem;
+    /*Si lo hacemos de esta manera, se pasa de los 120rem de altura, por los 4 rem de gap adicionales*/
+    grid-template-rows: 2.5fr 1fr 6fr 2.5fr;
+    /*Con las fracciones se toma en concideracion el gap*/
+
+    gap: 4rem;
+}
+
+.grid-9 .box {
+    margin: 0;
+}
+.grid-9 .header {
+    grid-area: header;
+}
+
+.grid-9 .nav {
+    grid-area: nav;
+}
+.grid-9 .main {
+    grid-area: contenido;
+}
+.grid-9 .sidebar {
+    grid-area: sidebar;
+}
+.grid-9 .footer {
+    grid-area: footer;
+}
+
+
+.grid-10 {
+    display: grid;
+    height: 120rem;
+    grid-template: "header header header" 2.5fr
+                         "nav nav nav" 1fr
+                         "contenido contenido sidebar" 6fr
+                         "footer footer footer" 2.5fr / 1fr 1fr 1fr ; /*No se puede utilizar repeat aquí*/
+    gap: 4rem;
+}
+
+.grid-10 .box {
+    margin: 0;
+}
+.grid-10 .header {
+    grid-area: header;
+}
+
+.grid-10 .nav {
+    grid-area: nav;
+}
+.grid-10 .main {
+    grid-area: contenido;
+}
+.grid-10 .sidebar {
+    grid-area: sidebar;
+}
+.grid-10 .footer {
+    grid-area: footer;
+}
+
+.grid-11 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    height:30rem;
+    /*align-items: center; /*Alineacion vertical*/
+    /*place-content: center; /*Igual que la anterior*/
+    align-content: center;/*Igual que la anterior*/
+}
+
+.grid-12 {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, 200px); /*Rellena con columnas hasta completar el largo*/
+    grid-template-columns: repeat(auto-fit, 200px); /*No Rellena*/
+    /*Auto fit y auto fill no funcionan con fracciones, solo con unidades fijas*/
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
