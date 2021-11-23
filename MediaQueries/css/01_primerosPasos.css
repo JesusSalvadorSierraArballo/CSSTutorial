@@ -1,0 +1,181 @@
+.intro .oferta {
+  background-color: #00446e;
+  padding: 2rem;
+  text-align: center;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.intro .precio {
+  font-size: 6rem;
+  margin: 0;
+}
+
+/*Estilo cuando se va a imprimir*/
+@media print {
+  body {
+    background-color: red;
+  }
+}
+
+/*Media queries no acepta rems, solo pixeles o dencidad de pixel */
+@media (max-width: 600px) { /*Tamaño horizontal de la pantalla menor a 600*/
+   /*body {
+    background-color: tomato;
+  }*/
+  .intro .oferta {
+    max-width: 30rem;
+  }
+  .intro .precio{
+    font-size: 2rem;
+  }
+}
+
+/*02 Movile First */
+
+.movileFirst .oferta {
+  background-color: #00446e;
+  padding: 2rem;
+  text-align: center;
+}
+
+.movileFirst .precio {
+  font-size: 4rem;
+  margin: 0;
+}
+
+@media (min-width: 600px) { /*Mayor a 600*/
+  .movileFirst .oferta {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  .movileFirst .precio {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 800px) { /*Mayor a 600*/
+  .oferta {
+    max-width: 60rem;
+  }
+}
+
+/*03 Desktop First de grande a pequeño*/
+.desktopFirst .oferta {
+  background-color: #00446e;
+  padding: 2rem;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 60rem;
+}
+
+.desktopFirst .precio {
+  font-size: 4rem;
+  margin: 0;
+}
+/*En desktop first se colocan los max-width del mayor al menor*/
+@media (max-width: 600px) { /*de cero a 600 px*/
+  .desktopFirst .oferta {
+    max-width: 100%;
+  }
+}
+
+/*04 Media queries entre dos tamaños*/
+.dos-tamanos .oferta {
+  background-color: #00446e;
+  padding: 2rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.dos-tamanos .precio {
+  font-size: 6rem;
+  margin: 0;
+}
+
+/*@media (min-width: 600px) {
+  .dos-tamanos .oferta {
+    background-color: tomato;
+  }
+}
+
+@media (min-width: 800px) {
+  .dos-tamanos .oferta {
+    background-color: #00446e;
+  }
+}*/
+/*Lo mismo que los dos bloques anteriores*/
+@media (min-width: 600px) and (max-width:800px), (min-width:1200px) {
+  .dos-tamanos .oferta {
+    background-color: tomato;
+  }
+}
+
+/*05 creacion del snippet de visual studio*/
+@media (min-width: 600px) {
+   
+}
+
+/*06 Tamaños estandar*/
+/*Tamaño para dispositivo movil, teléfono en horizontal*/
+@media (min-width: 550px) {
+  
+}
+
+/*Tamaño de tablet estandar larga hacia arriba portrait */ /*No me quedó del todo claro */
+@media (min-width: 768px) {
+  
+}
+/*landscape */
+@media (min-width: 1024px) {
+  
+}
+/*Laptop*/
+@media (min-width: 1200px) {
+  
+}
+
+/*Monitor, television*/
+@media (min-width: 1600px) {
+  
+}
+
+/*07 Contenodor responsivo*/
+.contenedor-responsive {
+  background-color: white;
+  /*width: 90%;
+  max-width: 1000px;*/
+  width: min(90%, 1000px); /*Lo mismo que las dos lineas anteriores */
+  height: 400px;
+  margin: 0 auto;
+}
+
+/*08 Fexbox responsivo*/
+
+@media (min-width: 768px) {
+  .flexbox-responsivo .tres-columnas-flex {
+    display: flex;
+    gap: 2rem;
+  }
+  .flexbox-responsivo .columna {
+    flex-grow: 1;
+  }
+}
+
+/*09 grid responsivo*/
+
+@media (min-width: 768px) {
+  .tres-columnas-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 2rem;
+  }
+}
+
+/*10 Imagenes responsivas*/
+
+img {
+  max-width: 100%;
+  display: block;
+}
